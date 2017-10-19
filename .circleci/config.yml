@@ -1,7 +1,7 @@
 version: 2
 jobs:
     build:
-        working_directory: ~/cst438_project1
+        working_directory: ~/
         docker:
             - image: circleci/android:api-25-alpha
         environment:
@@ -11,7 +11,7 @@ jobs:
             - restore_cache:
                 key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
             - run:
-                command: chmod +x ./gradlew
+                command: sudo chmod +x ./gradlew
             - run:
                 name: Download Dependencies
                 command: ./gradlew androidDependencies
