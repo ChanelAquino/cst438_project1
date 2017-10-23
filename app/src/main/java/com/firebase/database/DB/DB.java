@@ -11,5 +11,12 @@ public class DB {
     public DB()
     {
         mdb = FirebaseDatabase.getInstance().getReference(); //Initialize Database for read/write
+
+    }
+
+
+    public DatabaseReference getDB()
+    {
+        return mdb;
     }
 }
